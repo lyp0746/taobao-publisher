@@ -1,0 +1,38 @@
+[project]
+name = "taobao-publisher"
+version = "1.0.0"
+description = "淘宝商品AI智能发布软件 - 自动化发布并AI优化商品信息"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Your Name", email = "your@email.com" }
+]
+dependencies = [
+    "playwright>=1.42.0",
+    "ttkbootstrap>=1.10.1",
+    "pandas>=2.2.0",
+    "httpx>=0.27.0",
+    "Pillow>=10.3.0",
+    "python-dotenv>=1.0.1",
+    "aiofiles>=23.2.1",
+    "loguru>=0.7.2",
+    "openai>=1.30.0",
+    "openpyxl>=3.1.2",
+    "chardet>=5.2.0",
+]
+
+[project.scripts]
+taobao-publisher = "taobao_publisher.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/taobao_publisher"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+]
